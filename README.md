@@ -35,3 +35,22 @@ Preset & Plugins:
 -----------------
 -> Preset is a collection of plugins.
 -> Plugin is a part of preset.
+
+MobX:
+-----
+-> Used for global state management
+-> Need to install
+   - babel-plugin-transform-decorators-legacy
+   - babel-plugin-transform-class-properties
+-> Config the plugins like
+    query: {
+        plugins: [
+            "transform-decorators-legacy",
+            "transform-class-properties"
+        ]
+    }
+-> Decorators used
+    - @observable - state initialization
+    - @observer - If state used under render method, it re-render the component upon state changes
+    - @action - Method in which state value changes
+    - @action.bound - Method binds another method
