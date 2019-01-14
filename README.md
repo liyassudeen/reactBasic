@@ -12,6 +12,16 @@ Component Accessibility:
 ------------------------
 -> import & export used to access the components anywhere
 -> default, named export are the types
+React Inbuilt functions:
+------------------------
+-> componentWillMount() 
+    - Method will call before the render function.
+    - But it will return after render method called.
+    - In ES6, constructor do the same role as componentWillMount. If we already have constructor then we skip componentWillMount
+      and put the corresponding code inside constructor.
+-> componentDidMount()
+    - Method will call after the render function.
+    - For data fetching it will be better.
 spread operator(...):
 ---------------------
 -> For accessing remainingProps.
