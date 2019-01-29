@@ -8,11 +8,16 @@ class App extends React.Component {
 	   super(props);
 	   this.state = {counter : 0};
 	   this.handleClick = this.handleClick.bind(this);
+	   this.textInput = React.createRef();
+	   this.focusTextInput = this.focusTextInput.bind(this);
    }
    initClickState = new ClickState()
    handleClick() {
        this.setState({counter: this.state.counter + 1})
    }
+   focusTextInput() {
+    this.textInput.current.focus();
+  }
    render() {
     const {
         state = this.initClickState
@@ -33,7 +38,10 @@ class App extends React.Component {
 			 <div style={Style}>
 				{this.state.counter}
 			 </div>
-			 <button onClick={state.handleClick}>{''+state.isClicked}</button>
+			 <button onClick={this.handleClick}>Incrementer using setState</button>
+			 <input type="text" ref={this.textInput} />
+			 <input type="button" value="Focus the text Input using ref" onClick={this.focusTextInput} />
+			 <button onClick={state.handleClick}>{'MobX toggle '+state.isClicked}</button>
 		 </React.Fragment>
       );
    }
