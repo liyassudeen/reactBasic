@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import routing from './RouterRoot';
+import GraphqlClient from './GraphqlClient.jsx';
 
-ReactDOM.render(<App one='one' two='two' three='three'/>, document.getElementById('app'));
+ReactDOM.render(<GraphqlClient/>, document.getElementById('app'));
